@@ -7,14 +7,20 @@ import { HEROES } from './mock-heroes';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of'
 
+import { MessageService } from './message.service';
+
 @Injectable()
 export class HeroService {
 
   //method that returns the list of heroes from mock-herores.
   getHeroes(): Observable<Hero[]> {
+    //adding a message to the messages array.
+    this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
 
-  constructor() { }
+  //this is something called "service-in-service" where MessageService is in the
+  //Hero service which is injected in the hero component.
+  constructor(private messageService: MessageService) { }
 
 }
