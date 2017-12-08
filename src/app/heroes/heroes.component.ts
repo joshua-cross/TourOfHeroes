@@ -18,7 +18,16 @@ export class HeroesComponent implements OnInit {
   }
 
   heroes = HEROES;
-  
+
+  //creating cariable of type selectedHero.
+  selectedHero: Hero;
+
+  //creating an onclick event which will be called when a hero list has been selected.
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+    console.log(this.selectedHero.name);
+  }
+
   constructor() { }
 
   ngOnInit() {

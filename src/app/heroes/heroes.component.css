@@ -1,3 +1,38 @@
-h1 {
-    color: red;
+h2 {
+    color: green;
+}
+
+li {
+    size: 200%;
+    color: black;
+    font-weight: bold;
+    background-color: lightgreen;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px black solid;
+}
+
+li:hover {
+    background-color: darkgreen;
+    color: white;
+    /*Transitioning the background colour when the list element is selected.*/
+    -webkit-transition: background-color, color 200ms linear;
+    -ms-transition: background-color, color 200ms linear;
+    transition: background-color, color 200ms linear;
+    cursor: pointer;
+}
+
+.badge {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: green;
+}
+
+/*The class for when a hero is selected.*/
+.selectedHero.selected {
+    background-color: darkgreen;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
 }
