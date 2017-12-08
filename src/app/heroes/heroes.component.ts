@@ -3,6 +3,8 @@ import { Hero } from '../hero';
 //importing the mock heroes so they can be displayed as a list.
 import { HEROES } from '../mock-heroes'
 
+//importing the heroes service.
+import { HeroService } from '../hero.service'
 
 @Component({
   selector: 'app-heroes',
@@ -17,10 +19,15 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm'
   }
 
-  heroes = HEROES;
+  heroes: Hero[];
 
   //creating cariable of type selectedHero.
   selectedHero: Hero;
+
+  //getter for the heroes in the heroes service.
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes()
+  }
 
   //creating an onclick event which will be called when a hero list has been selected.
   onSelect(hero: Hero): void {
@@ -28,9 +35,10 @@ export class HeroesComponent implements OnInit {
     console.log(this.selectedHero.name);
   }
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
 }
