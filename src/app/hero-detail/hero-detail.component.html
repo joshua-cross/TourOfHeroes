@@ -1,0 +1,20 @@
+<!--checking if data exists in the selected hero.
+If it does we will display the following, else we will not.-->
+
+<div *ngIf="hero">
+    
+      <h2>
+        <!-- Displaying the name of the hero that has been selected in all uppercase. -->
+        {{hero.name | uppercase}} Details
+      </h2>
+    
+      <div><span>id: </span>{{hero.id}}</div>
+      <div><span>name: </span>{{hero.name}}</div>
+    
+      <!--Users should be able to edit the hero with an input.-->
+      <div>
+        <label>name
+          <input [(ngModel)]="hero.name" placeholder="name">
+        </label>
+      </div>
+    </div>
