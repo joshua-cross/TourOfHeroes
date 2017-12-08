@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+//importing the mock heroes so they can be displayed as a list.
+import { HEROES } from '../mock-heroes'
 
 
 @Component({
@@ -15,6 +17,8 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm'
   }
 
+  heroes = HEROES;
+  
   constructor() { }
 
   ngOnInit() {
